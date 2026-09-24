@@ -71,17 +71,28 @@ Every mission's flag looks like `FLAG{...}`. Check yours locally:
 ```
 
 A handful of missions (04, 05, 06, 07, 11) don't hand you a pre-made flag —
-you prove you did the right thing first, and the flag is generated once
-your workspace state is actually correct:
+you prove you did the right thing first, and the flag only appears once
+your workspace state is actually correct. That mission's own `README.md`
+will tell you when to use `--verify` instead of submitting a flag directly:
 
 ```
 ./check_flag.sh 06 --verify
 ```
 
-Your flags are unique to your own clone/session (a random value is
-generated the first time you run `start.sh`) — don't share your flags with
-classmates, and don't expect someone else's flags to validate against your
-`check_flag.sh`.
+Your flags are unique to your own clone/session — don't share your flags
+with classmates, and don't expect someone else's flags to validate against
+your `check_flag.sh`.
+
+### Difficulty Progression
+
+The missions intentionally become harder as you progress. Early missions
+teach you how to investigate the terminal using one concept at a time.
+Later missions require you to choose commands independently, combine
+multiple concepts, interpret more output, and eventually solve a
+multi-step investigation using everything you have learned.
+
+Harder does not mean more obscure: the clues remain solvable from the
+material taught in the session.
 
 ## Missions
 
@@ -97,7 +108,7 @@ classmates, and don't expect someone else's flags to validate against your
 | 07 | Environment Investigation | 3 — Medium | 10-15m | Part 2: `$HOME`/`$PATH`/`export`/`source` |
 | 08 | Find the Process | 3 — Medium | 10-15m | Part 3: `&`, `jobs`, `ps` |
 | 09 | Process Hunter | 3 — Medium | 10-15m | Part 4: `ps -ef`, `pgrep`, `pstree` |
-| 10 | Kill the Process | 4 — Med/Hard | 15m | Part 4: signals, `kill`, `kill -9` |
+| 10 | Kill the Process | 4 — Med/Hard | 15m | Part 4: SIGTERM vs SIGKILL, `kill`, `kill -9` |
 | 11 | Pipeline | 4 — Med/Hard | 15m | Part 4: `\|`, `grep`, `wc -l` |
 | 12 | Delayed Evidence | 5 — Med/Hard | 15-20m | Part 5: `at`, `atq` |
 | 13 | Recurring Evidence | 5 — Hard | 15-20m | Part 5: `cron`, `crontab` |
@@ -106,12 +117,14 @@ classmates, and don't expect someone else's flags to validate against your
 
 ### Full Lab
 
-All 15 missions plus bonus, done in order. Budget ~3 hours for a full pass
-including waiting on missions 12/13.
+All 15 missions plus bonus, done in order. Budget approximately 3 hours
+for an experienced student, including waiting on missions 12/13. Allow
+additional time for students who need hints or troubleshooting.
 
 ### Short Lab (time-limited sessions)
 
-If you're short on time, this subset still touches every PDF part:
+If you're short on time, this subset provides a representative pass
+through the major filesystem, process, signal, and scheduling concepts:
 **00, 02, 03, 04, 06, 08, 10, 13.**
 
 ### Fast Finishers
@@ -129,20 +142,24 @@ challenges (`b1`, `b2`, `b3`) that mix concepts from earlier missions.
   it, that's not the intended solution — ask your instructor.
 - Everything this lab creates lives inside the cloned repository, mainly
   under `lab_workspace/` (plus one tagged line in your own personal
-  crontab for missions 13/b3, which you remove yourself when done).
+  crontab for missions 13/b3 — use the lab's cleanup instructions to
+  remove the lab's tagged cron entry when you're done).
 
 ## Safety
 
-- No script here ever runs `sudo`, deletes anything outside this
-  repository, or touches real system files (`/etc`, `/dev`, `/var` are only
-  ever read, never written to).
+- No script writes to real system directories such as `/etc`, `/dev`, or
+  `/var` — they are only ever read, never written to — and nothing here
+  ever runs `sudo`.
+- Mission 13 and bonus b3 intentionally add one tagged entry to the user's
+  personal crontab and provide cleanup for that entry only. This is the
+  one deliberate exception to "everything lives inside the repository" —
+  it's your own crontab, changed on purpose, and cleaned up precisely.
 - Every background process this lab starts has an unmistakable name
   (`linuxctf_...`) so you can always tell lab processes apart from real
   ones, and so cleanup never risks touching anything else.
-- Mission 13/bonus b3 add exactly one line to **your own personal**
-  crontab, tagged `# LINUX_ESSENTIALS_CTF`. The PDF also teaches
-  `crontab -r` — be aware that command deletes your *entire* crontab, not
-  just this lab's line; this lab's own cleanup never uses it.
+- The PDF also teaches `crontab -r`; be aware that command deletes your
+  *entire* crontab, not just this lab's line. This lab's own cleanup never
+  uses it — it only ever removes lines tagged `# LINUX_ESSENTIALS_CTF`.
 
 ## Cleanup
 
