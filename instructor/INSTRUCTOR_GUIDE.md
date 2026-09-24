@@ -70,10 +70,13 @@ main `README.md` for how to strip it before publishing
 
 ## Timing
 
-- **Full lab**: ~3 hours (00-14 + bonus), including the ~2-5 minutes of
-  real waiting built into missions 12/13/b3.
+- **Full lab**: ~3 hours for an experienced student (00-14 + bonus),
+  including the ~2-5 minutes of real waiting built into missions 12/13/b3.
+  Budget extra time for students who need hints or troubleshooting.
 - **Short lab** (fits a single 1-1.5h lab session): 00, 02, 03, 04, 06, 08,
-  10, 13 — touches every PDF part with fewer total missions.
+  10, 13 — a representative pass through the major filesystem, process,
+  signal, and scheduling concepts with fewer total missions (it does not
+  touch environment variables or pipelines/`at`).
 - **Fast finishers**: bonus b1/b2/b3, ~5-10 min each.
 
 ## Per-mission answer key

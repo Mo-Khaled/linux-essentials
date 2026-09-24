@@ -1,6 +1,6 @@
 # Mission 09 — Process Hunter
 
-**Level 3 · Medium (10-15 min) · PDF: Part 4 — ps -e/-ef, pgrep, pidof, pstree, top**
+**Level 3 · Medium (10-15 min) · PDF: Part 4 — ps -e/-ef, pgrep, pidof, pstree**
 
 > DO → INSPECT → OBSERVE → REASON → FIND THE FLAG
 

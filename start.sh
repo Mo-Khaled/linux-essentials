@@ -4,8 +4,10 @@
 #   ./start.sh          set up (idempotent — safe to re-run any time)
 #   ./start.sh --reset  wipe all lab-generated state and start clean
 #
-# This never touches anything outside this repository, never uses sudo,
-# and never modifies real system files.
+# This never uses sudo and never modifies real system files. The one
+# exception to "everything stays inside this repository" is `--reset`,
+# which also removes the lab's own tagged line from your personal
+# crontab (never the whole crontab).
 set -u
 SCRIPT_DIR="$(cd -P "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 source "$SCRIPT_DIR/scripts/lib/common.sh"

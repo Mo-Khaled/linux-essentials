@@ -2,7 +2,9 @@
 # Surgical lab teardown. Only ever touches things this lab created:
 #   - recorded lab process PIDs (verified by name before signaling)
 #   - lab_workspace/ (all generated mission evidence)
-#   - the lab's own tagged crontab line (never the whole crontab)
+#   - the lab's own tagged crontab line (never the whole crontab) — this is
+#     the one place cleanup reaches outside the repository, and only ever
+#     to remove the single line tagged # LINUX_ESSENTIALS_CTF
 #   - prints (does not silently remove) any pending lab `at` jobs
 set -u
 SCRIPT_DIR="$(cd -P "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
@@ -40,4 +42,4 @@ fi
 info "Removing lab_workspace/ (all generated mission evidence)..."
 rm -rf "$LAB_WORKSPACE"
 
-ok "Cleanup complete. Nothing outside this repository was touched."
+ok "Cleanup complete. Only the lab's own processes, workspace, and tagged crontab line were touched."

@@ -1,6 +1,6 @@
 # Mission 10 — Kill the Process
 
-**Level 4 · Medium-Hard (15 min) · PDF: Part 4 — signals, kill, kill -9, killall, pkill**
+**Level 4 · Medium-Hard (15 min) · PDF: Part 4 — SIGTERM vs SIGKILL, kill, kill -9, killall, pkill**
 
 > DO → INSPECT → OBSERVE → REASON → FIND THE FLAG
 
