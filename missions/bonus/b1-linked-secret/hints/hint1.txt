@@ -1,0 +1,2 @@
+Hint 1: ls -a first (like mission 02), then ls -l to see which entries are
+links and where they point (like mission 03).

@@ -1,0 +1,5 @@
+Hint 3: Run `df -h .` from the repo root. If "Mounted on" is "/" and Use%
+is "61%", look for a folder under lab_workspace/rooms/06/storage/ whose
+name mentions "root" and "61" — that's the one. Then:
+  touch lab_workspace/rooms/06/storage/<that folder>/i_was_here
+  ./check_flag.sh 06 --verify

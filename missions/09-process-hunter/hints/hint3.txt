@@ -1,0 +1,2 @@
+Hint 3: If the count is 4, read:
+  cat lab_workspace/rooms/09/investigation/found_4/flag.txt

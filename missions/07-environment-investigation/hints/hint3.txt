@@ -1,0 +1,5 @@
+Hint 3: If `echo $HOME` is /home/student, your case room is
+lab_workspace/rooms/07/student/. After sourcing unlock.env, CASE_FILE is
+claim.txt. So:
+  touch lab_workspace/rooms/07/student/claim.txt
+  ./check_flag.sh 07 --verify

@@ -1,0 +1,5 @@
+Hint 3 (run from the repo root):
+  echo "bash $(pwd)/scripts/at_emitter.sh" | at now + 2 minutes
+  atq
+  # wait ~2 minutes
+  cat lab_workspace/rooms/12/evidence.txt

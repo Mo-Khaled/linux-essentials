@@ -1,0 +1,2 @@
+Hint 1: Files whose name starts with a dot (.) don't show up in a plain
+`ls`. This is a Linux convention, not a permission thing.

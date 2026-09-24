@@ -1,0 +1,6 @@
+Hint 3:
+  cat lab_workspace/rooms/14/.dossier
+  kill -SIGTERM "$(pidof linuxctf_final_target)"
+  base64 -d lab_workspace/rooms/14/encoded.b64
+  # that prints something like: rooms/14/vault/final_evidence.txt
+  cat lab_workspace/<that path>

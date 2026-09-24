@@ -1,0 +1,3 @@
+Hint 2: `ps -ef | grep linuxctf_worker_11_ | grep -v grep | wc -l` — the
+second grep removes grep's own line from the count. Redirect the final
+number into answer.txt with a single >.

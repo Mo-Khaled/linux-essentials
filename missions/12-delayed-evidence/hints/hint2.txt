@@ -1,0 +1,4 @@
+Hint 2: `echo "COMMAND" | at now + 2 minutes`. Don't run bare `at now + 2
+minutes` without piping something into it — that opens an interactive
+`at>` prompt (Ctrl+D to send what you typed, or just use the echo-pipe form
+and skip the prompt entirely). `atq` (or `at -l`) lists what's pending.

@@ -1,0 +1,6 @@
+Hint 3 (from lab_workspace/rooms/05/):
+  mkdir vault
+  cp source/original.txt vault/case_file.txt
+  ln -s vault/case_file.txt case_link
+  rm old_notes.txt
+Then: ./check_flag.sh 05 --verify

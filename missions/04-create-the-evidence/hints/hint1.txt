@@ -1,0 +1,2 @@
+Hint 1: `cat` prints a file's contents; look at piece1.txt and piece2.txt
+first so you know what you're assembling.

@@ -1,0 +1,5 @@
+Hint 3:
+  kill -SIGTERM "$(pidof linuxctf_target)"
+  cat lab_workspace/rooms/10/flag_after_term.txt
+(killall linuxctf_target or pkill linuxctf_target also send SIGTERM by
+default and work just as well — they target by name instead of PID.)

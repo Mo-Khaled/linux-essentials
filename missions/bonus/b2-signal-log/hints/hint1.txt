@@ -1,0 +1,2 @@
+Hint 1: `pidof linuxctf_bonus_watcher` gives you exactly one number: its
+PID. Count its digits.

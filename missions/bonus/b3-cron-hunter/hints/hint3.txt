@@ -1,0 +1,4 @@
+Hint 3:
+* * * * * bash /full/path/to/scripts/bonus_cron_emitter.sh # LINUX_ESSENTIALS_CTF
+Wait ~60-90s, then: cat lab_workspace/rooms/b3/.evidence
+Cleanup: bash scripts/remove_cron_entry.sh

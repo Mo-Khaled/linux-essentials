@@ -1,0 +1,1 @@
+Hint 3: `cat lab_workspace/rooms/b1/clue`
