@@ -1,3 +1,0 @@
-Hint 1: `df -h` shows every mounted partition. There's a variant that
-takes a directory argument and shows only the partition that directory
-lives on.

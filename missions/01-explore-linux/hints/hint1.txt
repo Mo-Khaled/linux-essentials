@@ -1,3 +1,1 @@
-Hint 1: `ls /` lists the real top-level directories. One of them is a very
-short, three-letter name and holds almost every configuration file on the
-system.
+Hint 1: Another word for "settings" is "configuration", or "config" for short.

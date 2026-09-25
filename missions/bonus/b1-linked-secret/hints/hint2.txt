@@ -1,2 +1,1 @@
-Hint 2: `cat` follows a chain of symlinks all the way to the real file
-automatically — you don't need to resolve each hop by hand.
+Hint 2: You don't need to follow each arrow yourself. cat does it for you.

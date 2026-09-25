@@ -1,0 +1,5 @@
+Hint 3 (the answer):
+  cd ~/linux-essentials/lab_workspace/rooms/00/start_here
+  cat flag.txt
+  cd ~/linux-essentials
+  ./check_flag.sh 00 FLAG{...}   <- paste your flag here

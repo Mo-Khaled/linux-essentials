@@ -1,0 +1,1 @@
+Hint 1: Use > for the first piece (to start the file) and >> for the second piece (to add to it).

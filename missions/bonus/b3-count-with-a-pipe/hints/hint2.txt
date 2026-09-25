@@ -1,0 +1,1 @@
+Hint 2: Add  | wc -l  to count those lines. Then add  > lab_workspace/rooms/b3/answer.txt  to save the number.

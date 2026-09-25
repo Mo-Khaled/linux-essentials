@@ -1,0 +1,9 @@
+Hint 3 (the answer), inside lab_workspace/rooms/05:
+  mkdir vault
+  cp report.txt vault/
+  mv draft.txt final.txt
+  rm junk.txt
+  cd ~/linux-essentials
+  ./check_flag.sh 05 --verify
+
+Made a mistake you can't fix? Run ./start.sh --reset to start the whole lab over.

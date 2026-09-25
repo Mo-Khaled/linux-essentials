@@ -1,3 +1,0 @@
-Hint 1: The PDF's signals table lists SIGHUP, SIGINT, SIGKILL, SIGTERM.
-`kill` sends SIGTERM by default. `kill -9` forces SIGKILL, which allows no
-clean-up whatsoever.

@@ -1,0 +1,2 @@
+Hint 3 (the answer):
+  cat lab_workspace/rooms/03/shortcut

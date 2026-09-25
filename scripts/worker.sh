@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Generic lab worker process engine — never run directly by students.
 #
-# The per-mission start_*.sh scripts (missions 08, 09, 10, 11, 14) give this
+# The per-mission start_*.sh scripts (missions 07, 08 and bonus b3, b5) give this
 # process its distinctive lab name by COPYING this file to
 # lab_workspace/.state/bin/<name> and executing that copy directly — since
 # the OS execs the file at the path it was invoked with, `ps`/`pgrep`/
@@ -13,13 +13,13 @@
 #
 # modes:
 #   alive-flag    writes the flag to <outfile> every 2s while running;
-#                 removes it immediately on SIGTERM/SIGINT/exit (mission 08)
+#                 removes it immediately on SIGTERM/SIGINT/exit (mission 07)
 #   sigterm-flag  writes nothing until SIGTERM arrives, then writes the flag
-#                 and exits cleanly (mission 10) — SIGKILL skips this
+#                 and exits cleanly (mission 08) — SIGKILL skips this
 #                 entirely, which is the point
 #   sigterm-b64   like sigterm-flag but writes base64(label_or_payload)
-#                 instead of a flag (mission 14 chain step)
-#   idle          just idles (decoys / mission 09 & 11 worker pools)
+#                 instead of a flag (bonus b5 chain step)
+#   idle          just idles (bonus b3 worker pool)
 set -u
 REAL_SELF="$(cd -P "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)/$(basename "${BASH_SOURCE[0]}")"
 
@@ -48,20 +48,22 @@ case "$MODE" in
         trap cleanup TERM INT EXIT
         while true; do
             gen_flag "$MISSION" "$LABEL" > "$OUTFILE"
-            sleep 2
+            sleep 2 & wait $!
         done
         ;;
     sigterm-flag)
         mkdir -p "$(dirname "$OUTFILE")"
         rm -f "$OUTFILE"
         trap 'gen_flag "$MISSION" "$LABEL" > "$OUTFILE"; exit 0' TERM
-        while true; do sleep 2; done
+        # `sleep & wait` (not plain sleep) so the TERM trap runs at once,
+        # not after the current sleep finishes
+        while true; do sleep 2 & wait $!; done
         ;;
     sigterm-b64)
         mkdir -p "$(dirname "$OUTFILE")"
         rm -f "$OUTFILE"
-        trap 'printf "%s" "$LABEL" | base64 > "$OUTFILE"; exit 0' TERM
-        while true; do sleep 2; done
+        trap 'printf "%s\n" "$LABEL" | base64 > "$OUTFILE"; exit 0' TERM
+        while true; do sleep 2 & wait $!; done
         ;;
     idle)
         while true; do sleep 2; done

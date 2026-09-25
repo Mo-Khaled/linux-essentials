@@ -1,1 +1,0 @@
-Hint 3: While it's still running: `cat lab_workspace/rooms/08/flag_while_running.txt`

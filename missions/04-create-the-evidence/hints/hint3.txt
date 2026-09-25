@@ -1,4 +1,0 @@
-Hint 3 (from lab_workspace/rooms/04/):
-  cat piece1.txt > evidence.txt
-  cat piece2.txt >> evidence.txt
-Then: ./check_flag.sh 04 --verify

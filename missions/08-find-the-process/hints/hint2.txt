@@ -1,3 +1,0 @@
-Hint 2: The process is named linuxctf_evidence_daemon. `ps -ef | grep linuxctf`
-will show it (and its PID) even if you started it in a completely different
-terminal session.

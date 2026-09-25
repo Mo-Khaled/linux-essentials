@@ -1,0 +1,1 @@
+Hint 1: The gentle way is plain kill, without -9:  kill PID

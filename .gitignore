@@ -2,9 +2,6 @@
 # per-clone flag seed live here. Never commit this.
 lab_workspace/
 
-# Output of scripts/make_student_release.sh
-dist/
-
 *.log
 *.pid
 .DS_Store

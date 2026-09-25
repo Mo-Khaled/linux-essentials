@@ -1,0 +1,2 @@
+Hint 1: In the output of  ps -ef | grep linuxctf  the PID is the number in the 2nd column.
+You may also see a line for grep itself. That is normal, just ignore it.

@@ -1,0 +1,2 @@
+Hint 1: The hidden file is called .note:
+  cat lab_workspace/rooms/b5/.note

@@ -1,0 +1,1 @@
+Hint 2: The file you want is called YOUR_SHELL.txt, for example bash.txt

@@ -1,3 +1,0 @@
-Hint 1: `jobs` only shows background jobs of the shell that started them.
-`ps` (or `ps -e`) shows every process on the system regardless of which
-shell started it.

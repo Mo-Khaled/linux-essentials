@@ -1,0 +1,2 @@
+Hint 1: Type ls -a and then the folder name:
+  ls -a lab_workspace/rooms/02

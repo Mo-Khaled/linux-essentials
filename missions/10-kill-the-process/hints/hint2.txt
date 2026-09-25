@@ -1,3 +1,0 @@
-Hint 2: `pidof linuxctf_target` (or `pgrep linuxctf_target`) gives you the
-PID. `kill -SIGTERM <PID>` or plain `kill <PID>` (SIGTERM is kill's
-default) sends the polite request.

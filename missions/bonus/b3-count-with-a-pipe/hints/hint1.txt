@@ -1,0 +1,2 @@
+Hint 1: This prints one line per worker:
+  pgrep -f linuxctf_worker_

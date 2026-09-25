@@ -1,3 +1,0 @@
-Hint 2: mkdir makes a directory. cp duplicates a file. ln -s makes a
-symbolic link (the PDF's exact form: ln -s TARGET LINK_NAME). rm deletes a
-file.

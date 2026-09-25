@@ -1,47 +1,60 @@
-# Mission 01 — Explore Linux
+# Mission 01 — Explore Linux  (~10 min)
 
-**Level 1 · Easy (5-10 min) · PDF: Part 1 — "On Linux, Everything Is a File"**
+**You will learn:** what the main folders of Linux are for.
 
-> DO → INSPECT → OBSERVE → REASON → FIND THE FLAG
+In Linux, everything starts from one top folder called `/` (say "root").
+Inside it are special folders. Four important ones:
 
-## Briefing
+| Folder  | What lives there                         |
+|---------|------------------------------------------|
+| `/etc`  | **settings** (configuration files)        |
+| `/dev`  | **devices** (disks, keyboard, ...)        |
+| `/var`  | **logs** and data that keeps changing     |
+| `/home` | **users' folders** (your files live here) |
 
-Real Linux systems organize almost everything under a handful of top-level
-directories off of `/`. Four of the most important:
+## Step 1 — Go to the lab folder
 
-- one holds **configuration files**
-- one holds **device files**
-- one holds **changing data** (logs, caches, mail...)
-- one holds **per-user home directories**
+```
+cd ~/linux-essentials
+```
 
-Go inspect the **real** system (read-only — you don't need to and shouldn't
-change anything there) to figure out which real top-level directory is
-"the one that holds configuration files."
+## Step 2 — Look at the top of the whole system
 
-## Your task
+```
+ls /
+```
 
-1. List the real root of the filesystem and look at what's there.
-2. Peek inside the directory you believe holds configuration files (a
-   plain listing is enough — you're just confirming, e.g., that
-   config-looking files live there).
-3. This lab keeps a *simulated* stand-in for that concept — not the real
-   system — under:
-   ```
-   lab_workspace/rooms/01/
-   ```
-   It contains four "rooms," each standing in for one of those four real
-   directories, named descriptively (not `etc`/`dev`/`var`/`home` — so you
-   never confuse the simulation with the real machine). Only the
-   **configuration room** holds the flag.
+You should see names like `bin  etc  home  var  dev ...`
 
-## Submit
+## Step 3 — Peek inside the settings folder
+
+```
+ls /etc
+```
+
+You should see a lot of names, like `passwd`, `hosts`, `shells`. These are
+the computer's settings. (Just look — don't change anything here!)
+
+## Step 4 — Look at the lab's four rooms
+
+The lab has four rooms. Each one pretends to be one of the folders above.
+
+```
+ls lab_workspace/rooms/01
+```
+
+You should see: `config_room  devices_room  logs_room  users_room`
+
+## Your turn
+
+Which room is like `/etc` (the **settings** folder)? Look inside that room
+with `ls`, then read the file in it with `cat`.
+
+## Check your flag
 
 ```
 ./check_flag.sh 01 FLAG{...}
 ```
 
-## Hints
-
-```
-cat missions/01-explore-linux/hints/hint1.txt
-```
+---
+Stuck? `cat missions/01-explore-linux/hints/hint1.txt`

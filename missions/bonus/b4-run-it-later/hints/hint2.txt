@@ -1,0 +1,2 @@
+Hint 2: When the job runs, it creates a file:
+  ls lab_workspace/rooms/b4

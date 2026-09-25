@@ -1,0 +1,4 @@
+Hint 2:
+  cp report.txt vault/
+  mv draft.txt final.txt
+Now delete junk.txt yourself with rm.

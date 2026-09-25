@@ -1,3 +1,0 @@
-Hint 3:
-  ps -ef | grep linuxctf_worker_11_ | grep -v grep | wc -l > lab_workspace/rooms/11/answer.txt
-  ./check_flag.sh 11 --verify

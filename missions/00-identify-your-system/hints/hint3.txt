@@ -1,3 +1,0 @@
-Hint 3: If echo $SHELL prints /bin/bash, the file you want is
-lab_workspace/rooms/00/bash.shell — cat it. All the others just tell you
-you're in the wrong file.

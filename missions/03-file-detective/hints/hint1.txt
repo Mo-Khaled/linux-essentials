@@ -1,2 +1,0 @@
-Hint 1: A plain `ls` shows names only — it can't tell you the type. You
-need the long-listing flag.

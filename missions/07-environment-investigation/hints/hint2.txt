@@ -1,3 +1,0 @@
-Hint 2: `source unlock.env` (from inside the room) runs that file's export
-statement in your current shell, setting a variable that names the exact
-file you need to create. `echo $CASE_FILE` afterward to see it.

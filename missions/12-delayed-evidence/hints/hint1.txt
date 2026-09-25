@@ -1,3 +1,0 @@
-Hint 1: `at` schedules a command to run once, later. It reads the command
-from standard input, so you pipe the command into it rather than typing it
-as an argument.

@@ -1,0 +1,1 @@
+Hint 1: Read welcome.txt again. It names a folder. Go into it with: cd FOLDER_NAME

@@ -1,1 +1,2 @@
-Hint 3: `cat lab_workspace/rooms/b1/clue`
+Hint 3 (the answer):
+  cat lab_workspace/rooms/b1/clue

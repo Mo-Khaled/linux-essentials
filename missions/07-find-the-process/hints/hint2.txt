@@ -1,0 +1,2 @@
+Hint 2: Another way to get only the PID:
+  pgrep -f linuxctf_evidence_daemon

@@ -1,3 +1,0 @@
-Hint 2: `pgrep -c linuxctf_worker_9_` (note the trailing underscore — it
-excludes anything not from this exact family). `pstree -p $USER` can also
-show you the process tree if you want to see it visually.

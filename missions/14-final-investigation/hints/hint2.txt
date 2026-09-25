@@ -1,3 +1,0 @@
-Hint 2: The process name starts with linuxctf_final. Find its PID with
-pgrep/pidof, send it SIGTERM (not -9), then look for encoded.b64. `base64
--d FILE` decodes it — the result is a relative path, not the flag itself.

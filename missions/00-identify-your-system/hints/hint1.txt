@@ -1,3 +1,0 @@
-Hint 1: Linux keeps track of your current shell in an environment variable.
-Environment variables are read with $ in front of their name and printed
-with `echo`.

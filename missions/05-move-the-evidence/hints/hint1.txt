@@ -1,4 +1,0 @@
-Hint 1: You need a new directory, a duplicate of a file (not a move), a
-shortcut that points at a file without copying it, and a deletion. That's
-four different PDF commands from the "Create, View & Edit Files" /
-"One Workflow" sections.

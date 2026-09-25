@@ -1,25 +1,26 @@
-# Bonus B1 — Linked Secret
+# Bonus b1 — Linked Secret  (~5 min)
 
-**Optional · Fast Finisher · Combines: hidden files + symbolic links**
-
-Everything you need is already in place — no launch script needed.
+**Uses:** hidden files (mission 02) + links (mission 03).
 
 ```
-lab_workspace/rooms/b1/
+cd ~/linux-essentials
+ls lab_workspace/rooms/b1
 ```
 
-A plain listing shows nothing useful. Once you find what's hidden here,
-you'll find it points somewhere — and that somewhere points somewhere else
-again.
+You should see one link called `clue`. It points to a **hidden** link, and
+that link points to the real file. A shortcut to a shortcut!
 
-## Submit
+## Your turn
+
+1. Use `ls -la lab_workspace/rooms/b1` (that's `-l` and `-a` together) to
+   see the hidden files **and** where each arrow `->` points.
+2. Read the flag with `cat`. `cat` follows all the arrows for you.
+
+## Check your flag
 
 ```
 ./check_flag.sh b1 FLAG{...}
 ```
 
-## Hints
-
-```
-cat missions/bonus/b1-linked-secret/hints/hint1.txt
-```
+---
+Stuck? `cat missions/bonus/b1-linked-secret/hints/hint1.txt`

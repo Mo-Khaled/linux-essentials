@@ -1,0 +1,2 @@
+Hint 1: To copy a file INTO a folder:  cp FILE FOLDER/
+For example:  cp something.txt vault/

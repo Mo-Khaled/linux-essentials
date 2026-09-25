@@ -1,3 +1,0 @@
-Hint 2: The variable is called $SHELL. `echo $SHELL` prints a full path
-like /bin/bash or /usr/bin/zsh — you only need the last part of that path
-(the filename) to match it against the room's file names.

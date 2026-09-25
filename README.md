@@ -1,182 +1,163 @@
-# Linux Essentials CTF
+# Linux Treasure Hunt 🏴
 
-> **Instructors:** before you publish this repository somewhere students
-> can see it, remove or privatize the `instructor/` folder — it holds the
-> full answer key. Either `git rm -r instructor && git commit`, keep it on
-> a private branch/fork, or run `./scripts/make_student_release.sh`, which
-> builds a clean, answer-free copy under `dist/` for you automatically.
+## What is this?
 
-Welcome to the Linux Essentials Investigation.
+This is a **treasure hunt inside your computer**.
 
-This is a hands-on, "Find the Flag" companion to a Linux Essentials /
-Operating Systems session covering the Linux filesystem, environment
-variables, processes, process control & signals, and scheduling. Instead of
-a list of commands to run, you get a series of investigation missions.
-Each one gives you a clue, not an answer — you decide which Linux command
-or concept solves it.
+Every level hides a secret word called a **flag**. A flag looks like this:
 
 ```
-DO → INSPECT → OBSERVE → REASON → FIND THE FLAG → UNLOCK THE NEXT MISSION
+FLAG{first_steps_1a2b3c4d}
 ```
 
-## Prerequisites
+You find flags by **typing commands**. Each level shows you exactly what
+to type. At the end of each level there is one small thing you do alone.
 
-- A real Ubuntu/Linux machine, VM, or WSL install (not required to be
-  Ubuntu specifically, but the PDF/session this lab supports assumes it).
-- `bash` and standard coreutils (already on any Ubuntu install).
-- `git`, to clone this repo.
-- **No `sudo` required anywhere in this lab.** A few missions (12, 13, and
-  the process-hunting missions) use `at`, `cron`, `pgrep`/`pkill`/`killall`/
-  `pstree` — if your machine is missing one of these, ask your instructor
-  to install it ahead of time (`scripts/preflight.sh` tells you exactly
-  what's missing and the one-line `apt install` for it).
+You don't need to know anything about Linux to start. Let's go!
 
-## Getting started
+---
+
+## Your keyboard superpowers
+
+Learn these first. They make everything easier.
+
+| Do this | To... |
+|---|---|
+| **Ctrl + Alt + T** | open the terminal (the black window where you type) |
+| **Ctrl + Shift + V** | **paste** into the terminal (plain Ctrl+V does NOT work here!) |
+| **Ctrl + Shift + C** | **copy** from the terminal |
+| **Tab** | finish a long name for you. Type `mis` and press Tab! |
+| **↑** (up arrow) | bring back the last command you typed |
+| **Ctrl + C** | stop a command that is stuck |
+| **Enter** | run the command you typed |
+
+> Typing tip: capital letters, spaces and dots matter. `ls -a` is not the
+> same as `ls-a`.
+
+---
+
+## Start the game
+
+Open the terminal (**Ctrl + Alt + T**). Type each command below, **one at
+a time**, and press **Enter** after each one.
+
+**1. Go to your home folder**
 
 ```
-git clone <this-repository-url>
-cd linux-essentials-ctf
+cd ~
+```
+
+Nothing is printed. That's normal!
+
+**2. Download the game**
+
+```
+git clone https://github.com/Mo-Khaled/linux-essentials.git
+```
+
+You should see a few lines ending with `done`.
+
+**3. Go into the game folder**
+
+```
+cd linux-essentials
+```
+
+**4. Set up the game**
+
+```
 ./start.sh
 ```
 
-`start.sh` checks your tools, sets up the first several missions, and tells
-you where to start. It's safe to run more than once — it won't overwrite
-anything you've already done. If you ever want a completely fresh start:
+You should see: `The lab is ready!`
+
+**5. Read the first level**
 
 ```
-./start.sh --reset
+cat missions/00-first-steps/README.md
 ```
 
-Then:
+That's it, you're playing! 🎉
 
-```
-cat missions/00-identify-your-system/README.md
-```
+---
 
-Each mission's `README.md` is your clue. Work out which Linux command or
-concept applies, try it, and see what you find. If you're stuck, each
-mission has a `hints/` folder with 2-3 hints, ordered from gentle nudge to
-fairly direct — open them one at a time, only as needed:
+## How to play a level
 
-```
-cat missions/00-identify-your-system/hints/hint1.txt
-```
+1. **Read** the level: `cat missions/NN-.../README.md`
+2. **Type** the commands it shows you, one by one.
+3. **Do** the "Your turn" part by yourself.
+4. **Check** your flag:
 
-## Submitting flags
+   ```
+   ./check_flag.sh 00 FLAG{...}
+   ```
 
-Every mission's flag looks like `FLAG{...}`. Check yours locally:
+   Put the level number where `00` is, and your flag where `FLAG{...}` is.
 
-```
-./check_flag.sh 00 FLAG{...}
-```
+5. If it says **Correct!**, it also tells you the command for the next level.
 
-A handful of missions (04, 05, 06, 07, 11) don't hand you a pre-made flag —
-you prove you did the right thing first, and the flag only appears once
-your workspace state is actually correct. That mission's own `README.md`
-will tell you when to use `--verify` instead of submitting a flag directly:
+---
 
-```
-./check_flag.sh 06 --verify
-```
+## Help! I'm lost
 
-Your flags are unique to your own clone/session — don't share your flags
-with classmates, and don't expect someone else's flags to validate against
-your `check_flag.sh`.
+- **"Where am I?"** Type `pwd`.
+- **"I want to go back to the game folder."** Type:
 
-### Difficulty Progression
+  ```
+  cd ~/linux-essentials
+  ```
 
-The missions intentionally become harder as you progress. Early missions
-teach you how to investigate the terminal using one concept at a time.
-Later missions require you to choose commands independently, combine
-multiple concepts, interpret more output, and eventually solve a
-multi-step investigation using everything you have learned.
+- **"I'm stuck on a level."** Every level has 3 hints. Open them one at a
+  time, for example:
 
-Harder does not mean more obscure: the clues remain solvable from the
-material taught in the session.
+  ```
+  cat missions/00-first-steps/hints/hint1.txt
+  ```
 
-## Missions
+- **"I broke something."** Start everything over:
 
-| # | Mission | Level | Time | PDF section |
-|---|---------|-------|------|-------------|
-| 00 | Identify Your System | 1 — Easy | 5-10m | Part 0: OS/Linux intro |
-| 01 | Explore Linux | 1 — Easy | 5-10m | Part 1: filesystem hierarchy |
-| 02 | Hidden Evidence | 1 — Easy | 5m | Part 1: `ls -a` |
-| 03 | File Detective | 1 — Easy | 5-10m | Part 1: `ls -l`, file types |
-| 04 | Create the Evidence | 2 — Easy/Med | 10m | Part 1: touch/echo/`>`/`>>`/cat |
-| 05 | Move the Evidence | 2 — Medium | 10-15m | Part 1: cp/mv/ln -s/rm |
-| 06 | Storage Investigation | 2 — Medium | 10-15m | Part 1: `df -h`, `df -h .` |
-| 07 | Environment Investigation | 3 — Medium | 10-15m | Part 2: `$HOME`/`$PATH`/`export`/`source` |
-| 08 | Find the Process | 3 — Medium | 10-15m | Part 3: `&`, `jobs`, `ps` |
-| 09 | Process Hunter | 3 — Medium | 10-15m | Part 4: `ps -ef`, `pgrep`, `pstree` |
-| 10 | Kill the Process | 4 — Med/Hard | 15m | Part 4: SIGTERM vs SIGKILL, `kill`, `kill -9` |
-| 11 | Pipeline | 4 — Med/Hard | 15m | Part 4: `\|`, `grep`, `wc -l` |
-| 12 | Delayed Evidence | 5 — Med/Hard | 15-20m | Part 5: `at`, `atq` |
-| 13 | Recurring Evidence | 5 — Hard | 15-20m | Part 5: `cron`, `crontab` |
-| 14 | Final Investigation | 6 — Hard | 20m | Combines the whole lab |
-| B1-B3 | Bonus | Optional | 5-10m each | Fast-finisher combos |
+  ```
+  ./start.sh --reset
+  ```
 
-### Full Lab
+- **"The terminal is frozen."** Press **Ctrl + C**.
 
-All 15 missions plus bonus, done in order. Budget approximately 3 hours
-for an experienced student, including waiting on missions 12/13. Allow
-additional time for students who need hints or troubleshooting.
+---
 
-### Short Lab (time-limited sessions)
+## The levels
 
-If you're short on time, this subset provides a representative pass
-through the major filesystem, process, signal, and scheduling concepts:
-**00, 02, 03, 04, 06, 08, 10, 13.**
+| Level | Name | You will learn |
+|---|---|---|
+| 00 | First Steps | `whoami`, `pwd`, `ls`, `cd`, `cat` |
+| 01 | Explore Linux | the main Linux folders (`/etc`, `/home`, ...) |
+| 02 | Hidden Files | `ls -a` |
+| 03 | File Types | `ls -l`, links |
+| 04 | Create Files | `touch`, `echo`, `>`, `>>` |
+| 05 | Organize Files | `mkdir`, `cp`, `mv`, `rm` |
+| 06 | Environment Variables | `echo $HOME`, `$SHELL`, `export` |
+| 07 | Find the Process | `&`, `jobs`, `ps`, `grep`, PID |
+| 08 | Stop the Process | `kill`, `kill -9` |
 
-### Fast Finishers
+**Finished early?** Try the bonus levels in `missions/bonus/`:
 
-Done early? The `missions/bonus/` folder has three optional combo
-challenges (`b1`, `b2`, `b3`) that mix concepts from earlier missions.
+| Level | Name | You will learn |
+|---|---|---|
+| b1 | Linked Secret | a link to a link |
+| b2 | Disk Space | `df -h` |
+| b3 | Count with a Pipe | `\|`, `wc -l` |
+| b4 | Run It Later | `at`, `atq` |
+| b5 | Final Boss | everything + `base64` |
 
-## Rules
+---
 
-- Work through missions in order — later ones assume you've done (or at
-  least understand) the earlier ones.
-- Don't share flags, hints you've written down, or spoilers with
-  classmates who haven't solved a mission yet.
-- Nothing in this lab requires `sudo`. If a mission seems to be asking for
-  it, that's not the intended solution — ask your instructor.
-- Everything this lab creates lives inside the cloned repository, mainly
-  under `lab_workspace/` (plus one tagged line in your own personal
-  crontab for missions 13/b3 — use the lab's cleanup instructions to
-  remove the lab's tagged cron entry when you're done).
-
-## Safety
-
-- No script writes to real system directories such as `/etc`, `/dev`, or
-  `/var` — they are only ever read, never written to — and nothing here
-  ever runs `sudo`.
-- Mission 13 and bonus b3 intentionally add one tagged entry to the user's
-  personal crontab and provide cleanup for that entry only. This is the
-  one deliberate exception to "everything lives inside the repository" —
-  it's your own crontab, changed on purpose, and cleaned up precisely.
-- Every background process this lab starts has an unmistakable name
-  (`linuxctf_...`) so you can always tell lab processes apart from real
-  ones, and so cleanup never risks touching anything else.
-- The PDF also teaches `crontab -r`; be aware that command deletes your
-  *entire* crontab, not just this lab's line. This lab's own cleanup never
-  uses it — it only ever removes lines tagged `# LINUX_ESSENTIALS_CTF`.
-
-## Cleanup
-
-When you're done (or if anything gets stuck):
+## When you're done
 
 ```
 ./cleanup.sh
 ```
 
-This stops every lab process it started, removes the tagged crontab entry
-(and tells you about any pending lab `at` job so you can remove it with
-`atrm`), and deletes `lab_workspace/`. It never touches anything else.
+This stops the game's programs and deletes the game's files. It does not
+touch anything else on your computer.
 
-## For instructors
-
-See `instructor/INSTRUCTOR_GUIDE.md` (full answer key, teaching notes, and
-timing) and `instructor/PDF_COVERAGE_MATRIX.md` (every PDF command/concept
-mapped to the mission that covers it). Remember to strip or privatize
-`instructor/` before publishing this repo to students — see the note at the
-top of this file.
+The game never needs `sudo`. If something asks for your password, stop and
+ask your instructor.

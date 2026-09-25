@@ -1,3 +1,2 @@
-Hint 2: It's /etc — try `ls /etc` and you'll see things like passwd, hosts,
-shells: all configuration. The lab's simulated room for that concept is
-named to describe what it stands for, not "/etc" itself.
+Hint 2: The room is config_room. Look inside it:
+  ls lab_workspace/rooms/01/config_room

@@ -1,0 +1,4 @@
+Hint 2: From lab_workspace/rooms/00 type:
+  cd start_here
+  ls
+You will see a file called flag.txt.

@@ -1,2 +1,2 @@
-Hint 3: `ls lab_workspace/rooms/01/` and open the one named config_room —
-cat the file inside it.
+Hint 3 (the answer):
+  cat lab_workspace/rooms/01/config_room/flag.txt

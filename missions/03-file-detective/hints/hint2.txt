@@ -1,3 +1,0 @@
-Hint 2: `ls -l lab_workspace/rooms/03/` — the entry whose line starts with
-'l' and shows an "-> " arrow is the symbolic link. cat can follow it
-directly by name.

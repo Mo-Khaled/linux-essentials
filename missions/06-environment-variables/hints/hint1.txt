@@ -1,0 +1,1 @@
+Hint 1: If echo $SHELL prints /bin/bash, your shell is called bash.

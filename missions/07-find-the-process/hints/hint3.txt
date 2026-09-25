@@ -1,0 +1,4 @@
+Hint 3 (the answer):
+  bash scripts/start_mission07.sh
+  cat lab_workspace/rooms/07/flag_while_running.txt
+If the file is missing, the program is not running. Start it again.

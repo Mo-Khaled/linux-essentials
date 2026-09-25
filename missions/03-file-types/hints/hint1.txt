@@ -1,0 +1,1 @@
+Hint 1: The line that starts with "l" is the link. Its name is at the end of the line, before the arrow ->

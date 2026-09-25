@@ -1,3 +1,0 @@
-Hint 2: `df -h .` from inside the repo shows the "Mounted on" path and the
-"Use%" column for the partition you're standing on right now. The storage
-folder names encode both of those two facts.

@@ -1,2 +1,0 @@
-Hint 1: `echo $HOME` prints your full home directory path. You only need
-the last path segment (the part after the final /).

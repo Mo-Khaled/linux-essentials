@@ -1,2 +1,0 @@
-Hint 3: `cat lab_workspace/rooms/03/shortcut` — cat transparently follows
-symlinks, so this reads the file it points to.

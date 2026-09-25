@@ -1,1 +1,0 @@
-Hint 2: `ls -a` shows all entries, dotfiles included (plus "." and "..").

@@ -1,2 +1,0 @@
-Hint 2: The file it writes starts with a dot — ls -a in
-lab_workspace/rooms/b3/.

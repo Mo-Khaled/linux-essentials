@@ -1,3 +1,0 @@
-Hint 2: `pidof linuxctf_bonus_watcher | wc -c` counts characters including a
-trailing newline, so subtract one — or just count the digits by eye, PIDs
-are usually short.

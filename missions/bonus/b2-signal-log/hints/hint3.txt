@@ -1,2 +1,0 @@
-Hint 3: If the PID is 5 digits long:
-  cat lab_workspace/rooms/b2/investigation/len_5/flag.txt
