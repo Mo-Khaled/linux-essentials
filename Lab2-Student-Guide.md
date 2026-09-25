@@ -206,7 +206,14 @@ Every command you will use in this lab, in simple words.
 | `cd FOLDER` | Goes into a folder. |
 | `cd ~` | Goes to your home folder. `~` is short for your home folder. |
 | `cd ..` | Goes up one folder. |
+
+### Reading files
+
+| Command | What it does |
+|---|---|
 | `cat FILE` | Shows what is written inside a file. |
+| `cat missions/00-first-steps/README.md` | Example: shows the instructions for level 00. |
+| `cat FILE1 > FILE2` | Copies what's inside FILE1 into FILE2 (you'll use this in level 04). |
 
 ### Making and changing files
 
